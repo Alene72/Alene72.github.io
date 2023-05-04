@@ -1,0 +1,390 @@
+</doctype html>
+
+<html>
+
+<head>
+<meta charset="utf-8">
+<title>梦幻西游属性加点模拟器</title>
+<link rel="stylesheet" type="text/css" href="/css/mysheet.css">
+<h1>梦幻西游属性加点模拟器</h1>
+<h3>Designed by: 超新星纪元（浙江3区普陀山区）</h3>
+</head>
+
+<body>
+<script src="/scripts/main.js" type="text/javascript"></script>
+<script src="/scripts/shuxing.js" type="text/javascript"></script>
+<script src="/scripts/character.js" type="text/javascript"></script>
+<script src="/scripts/qianneng.js" type="text/javascript"></script>
+<script src="/scripts/qiannengguo.js" type="text/javascript"></script>
+<script src="/scripts/shimenjineng.js" type="text/javascript"></script>
+<script src="/scripts/shenghuojineng.js" type="text/javascript"></script>
+<script src="/scripts/zuoqi.js" type="text/javascript"></script>
+<script src="/scripts/fabao.js" type="text/javascript"></script>
+<link rel="stylesheet" type="text/css" href="/css/mysheet.css">
+<hr>
+
+<h2>基本信息</h2>
+<div class="baseInfo">
+    <label for="name">名字：</label>
+    <input type="text" value="超新星纪元"/>
+    &emsp;
+    <label for="level">等级：</label>
+    <select id="levelSelect" onchange="onLevelChange();"></select>
+    &emsp;
+    <label for="menPai">门派：</label>
+    <select id="menPaiSelect" onchange="onMenPaiChange();"></select>
+    &emsp;
+    <label for="feisheng">飞升/渡劫/化圣：</label>
+    <select id="feishengSelect" onchange="onFeiShengChange();"></select>
+    &emsp;
+    <label for="jiyuan">月饼/粽子/机缘：</label>
+    <select id="jiYuanSelect" onchange="onJiYuanChange();"></select>
+    &emsp;
+    <label for="qianNengGuo">潜能果：</label>
+    <select id="qianNengGuoSelect" onchange="onQianNengGuoChange();"></select>
+    &emsp;
+</div>
+<hr>
+<div>
+    <label for="qiXue">气血：</label>
+    <label id="qiXueLabel"></label>
+    &emsp;
+    <label for="">魔法：</label>
+    <label id="moFaLabel"></label>
+    &emsp;
+</div>
+<div>
+    <label for="huoLi">活力：</label>
+    <label id="huoLiLabel"></label>
+    &emsp;
+    <label for="tiLi">体力：</label>
+    <label id="tiLiLabel"></label>
+    &emsp;
+</div>
+<hr>
+<div style="display: inline-block; vertical-align: top;">
+    <div>
+        <label for="mingZhong">命中：</label>
+        <label id="mingZhongLabel"></label>
+        &emsp;
+    </div>
+    <div>
+        <label for="shangHai">伤害：</label>
+        <label id="shangHaiLabel"></label>
+        &emsp;
+    </div>
+    <div>
+        <label for="fangYu">防御：</label>
+        <label id="fangYuLabel"></label>
+        &emsp;
+    </div>
+    <div>
+        <label for="suDu">速度：</label>
+        <label id="suDuLabel"></label>
+        &emsp;
+    </div>
+    <div>
+        <label for="faShang">法伤：</label>
+        <label id="faShangLabel"></label>
+        &emsp;
+    </div>
+    <div>
+        <label for="faFang">法防：</label>
+        <label id="faFangLabel"></label>
+        &emsp;
+    </div>
+    <div>
+        <label for="lingLi">灵力：</label>
+        <label id="lingLiLabel"></label>
+        &emsp;
+    </div>
+</div>
+<div style="display: inline-block; margin-right: 10px; vertical-align: top;">
+    <div>
+        <label for="wuBao">物理暴击等级：</label>
+        <label id="wuBaoLabel"></label>
+        &emsp;
+    </div>
+    <div>
+        <label for="chuanCi">穿刺等级：</label>
+        <label id="chuanCiLabel"></label>
+        &emsp;
+    </div>
+    <div>
+        <label for="kuangBao">狂暴等级：</label>
+        <label id="kuangBaoLabel"></label>
+        &emsp;
+    </div>
+    <div>
+        <label for="faShuBaoJi">法术暴击等级：</label>
+        <label id="faShuBaoJiLabel"></label>
+        &emsp;
+    </div>
+    <div>
+        <label for="faJie">法术伤害结果：</label>
+        <label id="faJieLabel"></label>
+        &emsp;
+    </div>
+    <div>
+        <label for="fengYin">封印命中等级：</label>
+        <label id="fengYinLabel"></label>
+        &emsp;
+    </div>
+    <div>
+        <label for="kangFeng">抵抗封印等级：</label>
+        <label id="kangFengLabel"></label>
+        &emsp;
+    </div>
+</div>
+<div style="display: inline-block; margin-right: 10px; vertical-align: top;">
+    <div>
+        <label for="zhiLiao">治疗能力：</label>
+        <label id="zhiLiaoLabel"></label>
+        &emsp;
+    </div>
+    <div>
+        <label for="kangWuBao">抗物理暴击等级：</label>
+        <label id="kangWuBaoLabel"></label>
+        &emsp;
+    </div>
+    <div>
+        <label for="geDang">格挡值：</label>
+        <label id="geDangLabel"></label>
+        &emsp;
+    </div>
+    <div>
+        <label for="kangFaBao">抗法术暴击等级：</label>
+        <label id="kangFaBaoLabel"></label>
+        &emsp;
+    </div>
+    <div>
+        <label for="qiXueHuiFu">气血回复效果：</label>
+        <label id="qiXueHuiFuLabel"></label>
+        &emsp;
+    </div>
+    <div>
+        <label for="duoBi">躲避：</label>
+        <label id="duoBiLabel"></label>
+        &emsp;
+    </div>
+</div>
+<hr>
+
+<div class="JinengAndQianNeng">
+    <div style="display: inline-block; vertical-align: top;">
+        <h2>师门技能</h2>
+        <div class="jineng1">
+            <label id="jineng1Name"></label>
+            &emsp;
+            <select id="jineng1Select" onchange="onShiMenJiNengChange();"></select>
+        </div>
+        <div class="jineng2">
+            <label id="jineng2Name"></label>
+            &emsp;
+            <select id="jineng2Select" onchange="onShiMenJiNengChange();"></select>
+        </div>
+        <div class="jineng3">
+            <label id="jineng3Name"></label>
+            &emsp;
+            <select id="jineng3Select" onchange="onShiMenJiNengChange();"></select>
+        </div>
+        <div class="jineng4">
+            <label id="jineng4Name"></label>
+            &emsp;
+            <select id="jineng4Select" onchange="onShiMenJiNengChange();"></select>
+        </div>
+        <div class="jineng5">
+            <label id="jineng5Name"></label>
+            &emsp;
+            <select id="jineng5Select" onchange="onShiMenJiNengChange();"></select>
+        </div>
+        <div class="jineng6">
+            <label id="jineng6Name"></label>
+            &emsp;
+            <select id="jineng6Select" onchange="onShiMenJiNengChange();"></select>
+        </div>
+        <div class="jineng7">
+            <label id="jineng7Name"></label>
+            &emsp;
+            <select id="jineng7Select" onchange="onShiMenJiNengChange();"></select>
+        </div>
+    </div>
+    &emsp;
+    <div style="display: inline-block; margin-right: 10px; vertical-align: top;">
+        <h2>生活技能</h2>
+        <div class="qiangShenShu">
+            <label id="qiangShenName">强身术：</label>
+            &emsp;
+            <select id="qiangShenSelect" onchange="onShengHuoJiNengChange();"></select>
+        </div>
+        <div class="mingXiang">
+            <label id="mingXiangName">冥想：</label>
+            &emsp;
+            <select id="mingXiangSelect" onchange="onShengHuoJiNengChange();"></select>
+        </div>
+        <div class="yangShengZhiDao">
+            <label id="yangShengName">养生之道：</label>
+            &emsp;
+            <select id="yangShengSelect" onchange="onShengHuoJiNengChange();"></select>
+        </div>
+        <div class="jianShenShu">
+            <label id="jianShenName">健身术：</label>
+            &emsp;
+            <select id="jianShenSelect" onchange="onShengHuoJiNengChange();"></select>
+        </div>
+        <div class="qiangZhuang">
+            <label id="qiangZhuangName">强壮：</label>
+            &emsp;
+            <select id="qiangZhuangSelect" onchange="onShengHuoJiNengChange();"></select>
+        </div>
+        <div class="shenSu">
+            <label id="shenSuName">神速：</label>
+            &emsp;
+            <select id="shenSuSelect" onchange="onShengHuoJiNengChange();"></select>
+        </div>
+    </div>
+    &emsp;
+    <div style="display: inline-block; margin-right: 10px; vertical-align: top;">
+        <h2>潜能分配</h2>
+        <div class="qianNengDian">
+            <label id="qianNengDianName">未分配潜能：</label>
+            &emsp;
+            <label id="weiFenPeiQianNeng"></label>
+        </div>
+        <div class="tiZhi">
+            <label id="tiZhiName">体质：</label>
+            &emsp;
+            <label id="tiZhiLabel"></label>
+            &emsp;
+            <button id="tiZhi_plus_1" onclick="Character.getInstance().plusTiZhi(1);">+1</button>
+            <button id="tiZhi_plus_5" onclick="Character.getInstance().plusTiZhi(5);">+5</button>
+            <button id="tiZhi_plus_10" onclick="Character.getInstance().plusTiZhi(10);">+10</button>
+            <button id="tiZhi_plus_100" onclick="Character.getInstance().plusTiZhi(100);">+100</button>
+            <button id="tiZhi_minus_100" onclick="Character.getInstance().minusTiZhi(100);">-100</button>
+            <button id="tiZhi_minus_10" onclick="Character.getInstance().minusTiZhi(10);">-10</button>
+            <button id="tiZhi_minus_5" onclick="Character.getInstance().minusTiZhi(5);">-5</button>
+            <button id="tiZhi_minus_1" onclick="Character.getInstance().minusTiZhi(1);">-1</button>
+        </div>
+        <div class="moLi">
+            <label id="moLiName">魔力：</label>
+            &emsp;
+            <label id="moLiLabel"></label>
+            &emsp;
+            <button id="moLi_plus_1" onclick="Character.getInstance().plusMoLi(1);">+1</button>
+            <button id="moLi_plus_5" onclick="Character.getInstance().plusMoLi(5);">+5</button>
+            <button id="moLi_plus_10" onclick="Character.getInstance().plusMoLi(10);">+10</button>
+            <button id="moLi_plus_100" onclick="Character.getInstance().plusMoLi(100);">+100</button>
+            <button id="moLi_minus_100" onclick="Character.getInstance().minusMoLi(100);">-100</button>
+            <button id="moLi_minus_10" onclick="Character.getInstance().minusMoLi(10);">-10</button>
+            <button id="moLi_minus_5" onclick="Character.getInstance().minusMoLi(5);">-5</button>
+            <button id="moLi_minus_1" onclick="Character.getInstance().minusMoLi(1);">-1</button>
+        </div>
+        <div class="liLiang">
+            <label id="liLiangName">力量：</label>
+            &emsp;
+            <label id="liLiangLabel"></label>
+            &emsp;
+            <button id="liLiang_plus_1" onclick="Character.getInstance().plusLiLiang(1);">+1</button>
+            <button id="liLiang_plus_5" onclick="Character.getInstance().plusLiLiang(5);">+5</button>
+            <button id="liLiang_plus_10" onclick="Character.getInstance().plusLiLiang(10);">+10</button>
+            <button id="liLiang_plus_100" onclick="Character.getInstance().plusLiLiang(100);">+100</button>
+            <button id="liLiang_minus_100" onclick="Character.getInstance().minusLiLiang(100);">-100</button>
+            <button id="liLiang_minus_10" onclick="Character.getInstance().minusLiLiang(10);">-10</button>
+            <button id="liLiang_minus_5" onclick="Character.getInstance().minusLiLiang(5);">-5</button>
+            <button id="liLiang_minus_1" onclick="Character.getInstance().minusLiLiang(1);">-1</button>
+        </div>
+        <div class="naiLi">
+            <label id="naiLiName">耐力：</label>
+            &emsp;
+            <label id="naiLiLabel"></label>
+            &emsp;
+            <button id="naiLi_plus_1" onclick="Character.getInstance().plusNaiLi(1);">+1</button>
+            <button id="naiLi_plus_5" onclick="Character.getInstance().plusNaiLi(5);">+5</button>
+            <button id="naiLi_plus_10" onclick="Character.getInstance().plusNaiLi(10);">+10</button>
+            <button id="naiLi_plus_100" onclick="Character.getInstance().plusNaiLi(100);">+100</button>
+            <button id="naiLi_minus_100" onclick="Character.getInstance().minusNaiLi(100);">-100</button>
+            <button id="naiLi_minus_10" onclick="Character.getInstance().minusNaiLi(10);">-10</button>
+            <button id="naiLi_minus_5" onclick="Character.getInstance().minusNaiLi(5);">-5</button>
+            <button id="naiLi_minus_1" onclick="Character.getInstance().minusNaiLi(1);">-1</button>
+        </div>
+        <div class="minJie">
+            <label id="minJieName">敏捷：</label>
+            &emsp;
+            <label id="minJieLabel"></label>
+            &emsp;
+            <button id="minJie_plus_1" onclick="Character.getInstance().plusMinJie(1);">+1</button>
+            <button id="minJie_plus_5" onclick="Character.getInstance().plusMinJie(5);">+5</button>
+            <button id="minJie_plus_10" onclick="Character.getInstance().plusMinJie(10);">+10</button>
+            <button id="minJie_plus_100" onclick="Character.getInstance().plusMinJie(100);">+100</button>
+            <button id="minJie_minus_100" onclick="Character.getInstance().minusMinJie(100);">-100</button>
+            <button id="minJie_minus_10" onclick="Character.getInstance().minusMinJie(10);">-10</button>
+            <button id="minJie_minus_5" onclick="Character.getInstance().minusMinJie(5);">-5</button>
+            <button id="minJie_minus_1" onclick="Character.getInstance().minusMinJie(1);">-1</button>
+        </div>
+    </div>
+</div>
+<hr>
+
+<div class="faBaoAndZuoQi">
+    <div style="display: inline-block; vertical-align: top;">
+        <h2>坐骑</h2>
+        <div>
+            <label>等级：</label>
+            <select id="zuoQiLevelSelect" onchange="onZuoQiLevelChange();"></select>
+            &emsp;
+        </div>
+        <div>
+            <label>成长：</label>
+            <input id="zuoQiChengZhangInput" type="number" min="0.98" max="2.3433" value="2.3433" step="0.0001" onchange="onZuoQiChengZhangChange();"></select>
+            &emsp;
+        </div>
+        <div>
+            <label>主属性：</label>
+            <select id="zuoQiZhuShuXingSelect" onchange="onZuoQiZhuShuXingChange();"></select>
+            &emsp;
+        </div>
+    </div>
+    <div style="display: inline-block; margin-right: 10px; vertical-align: top;">
+        <h2>法宝</h2>
+        <div>
+            <label>风袋/凌波仙符：</label>
+            <select id="fengDaiOrXianFuSelect" onchange="onFaBaoSelectChange();"></select>
+            &emsp;
+        </div>
+    </div>
+    <div style="display: inline-block; margin-right: 10px; vertical-align: top;">
+        <h2>神器</h2>
+        <div>
+        </div>
+    </div>
+</div>
+
+<hr>
+<div class="zhuangBeiAndLingShi">
+    <div style="display: inline-block; vertical-align: top;">
+        <h2>装备</h2>
+        <div>
+            <label>武器：</label>
+            <select id="zuoQiLevelSelect" onchange="onZuoQiLevelChange();"></select>
+            &emsp;
+        </div>
+    </div>
+    <div style="display: inline-block; margin-right: 10px; vertical-align: top;">
+        <h2>灵饰</h2>
+    </div>
+    <div style="display: inline-block; margin-right: 10px; vertical-align: top;">
+        <h2>奇经八脉</h2>
+    </div>
+</div>
+
+<br>
+<!-- <h1>{{ hello }}</h1> -->
+
+<script language = "JavaScript">
+    initLevel();
+    initMenPai();
+    initJiYuan();
+</script>
+</body>
+</html>
+
